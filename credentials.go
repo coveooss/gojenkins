@@ -35,6 +35,18 @@ type credentialIDs struct {
 	Credentials []credentialID `json:"credentials"`
 }
 
+//AmazonWebServicesCredentials represents credentials from the AWS credentials plugin
+type AmazonWebServicesCredentials struct {
+	XMLName            xml.Name `xml:"com.cloudbees.jenkins.plugins.awscredentials.AWSCredentialsImpl"`
+	ID                 string   `xml:"id"`
+	Scope              string   `xml:"scope"`
+	Description        string   `xml:"description"`
+	AccessKey          string   `xml:"accessKey"`
+	SecretKey          string   `xml:"secretKey"`
+	IAMRoleARN         string   `xml:"iamRoleArn"`
+	IAMMFASerialNumber string   `xml:"iamMfaSerialNumber"`
+}
+
 //UsernameCredentials struct representing credential for storing username-password pair
 type UsernameCredentials struct {
 	XMLName     xml.Name `xml:"com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl"`
